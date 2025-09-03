@@ -1,0 +1,291 @@
+
+* {
+font-family: Pangolin;
+font-family: Roboto;
+font-weight: normal;
+font-size: 14px;
+outline: none;
+user-select: none;
+
+
+}
+
+body {
+
+background:#ede8e8;
+}
+
+
+/* Сброс стилей браузера по умолчанию - убрать отступы */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+
+
+
+
+.my-flex-cont {
+    display: flex;
+    flex-flow: row-reverse wrap-reverse;
+    justify-content: center;
+    align-items: flex-start;
+    align-content: flex-start;
+    height: auto; /* Высота будет определяться содержимым */
+    width: 100%;
+    
+    /* Позиционирование */
+    position: absolute;
+    bottom: 100px; /* Отступ от нижнего края */
+    left: 0; /* Прижимаем к левому краю */
+    right: 0; /* Прижимаем к правому краю */
+	background:;
+}
+.my-flex-box {
+ margin: 3px;
+ padding: 10px;
+ flex: 0 1 auto;
+ background:rgba(0,0,0,0.6);
+ border:1px solid rgba(0,0,0,0.5);
+ border-radius:2px;
+ box-shadow: 0px 0px 0px 1px rgba(255, 255, 255, 0.2) inset;
+ color:#fff;
+ font-size:14px;
+ color:#fff;
+ 
+ width:80px;
+ height:100px;
+ z-index:2;
+}
+
+
+
+
+
+@keyframes spin {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+  
+
+
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+  
+.battle_act {
+  background: transparent; /* Фон контейнера */
+  height: 154px;
+
+  z-index: 2;
+  position: absolute;
+  top: 236px;
+  left: 12px;
+  right: 11px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px; /* Расстояние между строками - вертикаль */
+}
+.row {
+  display: flex;
+  gap: 12px; /* Расстояние между ячейками - горизонталь */
+}
+.cell {
+  background: url(4545.png), #000;
+  background-size:100% 100%;
+  border: 1px solid;
+  height: 136px;
+  flex: 1; /* Равномерное распределение ширины */
+  
+  border:1px solid #000; border-radius:4px; position:relative; background:rgba(255,255,255,1); background:#ccc;
+  
+  
+  /* просадка на 15-20 фпс на телефоне из=за этой анммации */
+  background: linear-gradient(135deg, #ffcfbf, #ffff99, #2a2a2a, #ffcfbf);
+    background-size: 200% 200%;
+    animation: gradientFlow 3s ease infinite;
+	
+	background:none;
+	border: 0px solid;
+	background: #d9d900;
+	background: #fff;
+	background: rgba(255,255,153,0.7);
+}
+.cell2 {
+  border:1px solid #000; 
+  border-radius:3px; 
+  position:absolute; 
+  inset: 0px;
+filter: grayscale(50%);
+box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.5) inset, -1px -1px 1px 0px rgba(255, 255, 255, 0.5) inset, 0px 0px 2px 1px rgba(221, 229, 158, 0.95);
+
+}
+
+
+
+.uiBtl{
+z-index:3;
+position:absolute;
+filter: drop-shadow(0px 0px 1px #fff) drop-shadow(0px 0px 1px #fff) drop-shadow(0px 0px 1px #fff) invert(100%);
+<!-- filter: drop-shadow(1px 1px 0px #fff) drop-shadow(-1px -1px 0px #fff) drop-shadow(-1px 1px 0px #fff) drop-shadow(1px -1px 0px #fff) invert(100%); -->
+}
+
+
+
+
+
+.pulse {
+  animation: pulse 0.2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1); /* Исходный размер */
+  }
+  50% {
+    transform: scale(1.1); /* Увеличение на 10% */
+  }
+  75% {
+    transform: scale(0.9); /* Уменьшение на 10% */
+  }
+  100% {
+    transform: scale(1); /* Возврат к исходному */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.jump-effect {
+  animation: jump-animation 0.8s ease;
+}
+@keyframes jump-animation {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
+.rotate-vert-center{animation:rotate-vert-center .7s linear both}
+@-webkit-keyframes rotate-vert-center{0%{transform:scale(1) rotate3d(1,1,0,0deg)}50%{transform:scale(2) rotate3d(1,1,0,-180deg)}100%{transform:scale(1) rotate3d(1,1,0,-360deg)}}
+
+.flip-diagonal-2-br{animation:flip-diagonal-2-br .4s cubic-bezier(.455,.03,.515,.955) both}
+@keyframes flip-diagonal-2-br{0%{transform:rotate3d(-1,1,0,0deg)}100%{transform:rotate3d(-1,1,0,180deg)}}
+
+.rotate-diagonal-1{animation:rotate-diagonal-1 0.8s linear both}
+@keyframes rotate-diagonal-1{0%{transform:scale(1) rotate3d(1,1,0,0deg)}50%{transform:scale(0.6) rotate3d(1,1,1,-180deg)}100%{transform:scale(1) rotate3d(1,1,0,-360deg)}}
+
+.rotate-diagonal-12{animation:rotate-diagonal-12 .5s linear both}
+@keyframes rotate-diagonal-12{0%{transform:scale(1) rotate3d(1,1,0,0deg)}65%{transform:scale(0.6) rotate3d(1,1,1,-180deg)}100%{transform:scale(1.05) rotate3d(1,1,0,-360deg)}}
+
+
+
+
+
+@keyframes scaleAnimation {
+  0% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.scale-up {
+  animation: scaleAnimation 200ms ;
+}
+
+
+
+
+
+.health-container {
+            
+            height: 10px;
+            background-color: #000;
+            border-radius: 4px;
+            padding: 1px;
+            
+            border: 1px solid #333;
+			
+            position: absolute;
+			top:140px;
+			left:17px;
+			right:17px;
+			z-index:3;
+        }
+        
+        .health-bar {
+            height: 100%;
+            width: 75%;
+            background: linear-gradient(to right, #fff, #fff);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+            position: relative; /* Возвращаем relative */
+            overflow: hidden;
+            box-shadow: 
+                inset 0 1px 2px rgba(255, 255, 255, 0.3),
+                inset 0 -1px 2px rgba(0, 0, 0, 0.3),
+                0 1px 2px rgba(0, 0, 0, 0.5);
+            float: left; /* Добавляем float для прижатия к левому краю */
+        }
+        
+        .health-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, 
+                      rgba(255,255,255,0) 0%, 
+                      rgba(255,255,255,0.3) 50%, 
+                      rgba(255,255,255,0) 100%);
+            background: linear-gradient(90deg, 
+                      rgba(255,255,153,0.0) 0%, 
+                      rgba(255,255,153,0.3) 50%, 
+                      rgba(255,255,153,0.0) 100%);
+            animation: shine 4s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .health-text {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            line-height: 30px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            color: #000;
+            text-shadow: 0 0 2px #fff;
+            top: 0;
+            left: 0;
+        }
